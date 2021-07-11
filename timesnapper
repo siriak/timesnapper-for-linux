@@ -1,0 +1,8 @@
+interval_s=10
+while true
+do
+    idle_time_ms=`xprintidle`
+    [[ $idle_time_ms -lt $(($interval_s * 1000)) ]]\
+        && scrot '/home/siriak/pictures/snaps/%Y-%m-%d_%H-%M-%S.jpg' -zq 50
+    sleep $interval_s
+done
